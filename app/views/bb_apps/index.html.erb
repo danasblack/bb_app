@@ -1,0 +1,20 @@
+ <h1><%= "Check out our past and present events" %></h1>
+
+ <div class="row">
+  <div class="col-md-12">
+   <% @events.each do |event| %>
+   <img src='<%= event.image %>' class="flyer">
+ </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="well">
+     <h4> Theme: <%= event.theme %></h4>
+     <h4> Date: <%= event.date %></h4>
+     <h4> Time: <%= event.time %></h4>
+     <h4> Location: <%= event.location %></h4>
+     <button><%= link_to "See more details", "/events/#{event.id}" %></button>
+   </div>
+   <% end %>
+
+   <h4><a href="/events"> Back to the main page</a></h4>
